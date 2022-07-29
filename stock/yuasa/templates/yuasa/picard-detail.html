@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infos détaillées</title>
+    <link rel="stylesheet" href="{% static 'yuasa/styles.css' %}">
+</head>
+<body>
+
+<div class="centered">
+<h1>Infos détaillées : {{ palette.reference }}</h1>
+
+    <ul>
+        <li>Date code du lot : {{ palette.date_code }}</li>
+        <li>Date de transfert : {{ palette.dateTransfert }}</li>
+        <li>Tension lors de reception PICARD: {{ palette.voltage }}V</li>
+        <li>Quantité de palettes : {{ palette.number_of_palettes }}</li>
+        <li>Quantité par palette : {{ palette.quantity_per_palette }}</li>
+        <li>Technologie : {{ palette.type }}</li>
+        <li>Date recharge max avant sulfatation : {{ palette.date_limite|date:"SHORT_DATE_FORMAT" }}</li>
+        <li></li>
+        <li></li>
+        <li><a href="{%  url 'picard'  %}">RETOUR LISTE</a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>

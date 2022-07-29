@@ -1,0 +1,23 @@
+{%  load static  %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="{% static 'yuasa/styles.css' %}">
+</head>
+<body>
+<div class="centered">
+    <h1>Gestion des stocks déportés GS YUASA BATTERY France</h1>
+    <br>
+    <br>
+    <nav>
+        <ul>
+            <li><a href="{% url 'sauron' %}">STOCK SAURON</a></li>
+            <li><a href="{% url 'picard' %}">STOCK PICARD</a></li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

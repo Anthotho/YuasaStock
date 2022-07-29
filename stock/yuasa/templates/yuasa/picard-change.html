@@ -1,0 +1,28 @@
+{% load static  %}
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter</title>
+    <link rel="stylesheet" href="{% static 'yuasa/styles.css' %}">
+</head>
+<body>
+
+<div class="centered">
+    <nav>
+        <a href="{%  url 'picard'  %}">Retour Liste Picard</a>
+    </nav>
+    <h1>Modifier une ou des palette(s) Yuasa au stock déporté PICARD</h1>
+
+
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input id="envoyer" type="submit" value="Envoyer">
+    </form>
+</div>
+
+</body>
+</html>

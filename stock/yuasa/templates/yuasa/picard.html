@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock dépôt PICARD</title>
+    <link rel="stylesheet" href="{% static 'yuasa/styles.css' %}">
+</head>
+<body>
+    <h1>Lignes du stock YUASA déporté chez PICARD</h1>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'main' %}">Retour accueil<a/></li>
+            <li><a href="{% url 'picard-new' %}">[+] Ajouter une ligne</a></li>
+        </ul>
+    </nav>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Référence</th>
+            <th>Date Code</th>
+            <th>Date du transfert</th>
+            <th>Tension au transfert</th>
+            <th>Nombre de palettes</th>
+            <th>Quantité par palette</th>
+            <th>Date limite avant sulfatation</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    {% for palette in palettes %}
+    <tbody>
+        <tr>
+            <td> {{ palette.reference }}</td>
+            <td> {{ palette.date_code }}</td>
+            <td> {{ palette.dateTransfert }}</td>
+            <td> {{ palette.voltage }}V</td>
+            <td> {{ palette.number_of_palettes }}</td>
+            <td> {{ palette.quantity_per_palette }}</td>
+            <td> {{ palette.date_limite|date:"SHORT_DATE_FORMAT" }}</td>
+            <td><a href="{%  url 'picard-change' palette.id %}">[modifier]</a></td>
+            <td><a href="{%  url 'picard-delete' palette.id %}">[supprimer]</a></td>
+
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+</body>
+</html>
