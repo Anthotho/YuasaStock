@@ -8,16 +8,25 @@
     <link rel="stylesheet" href="{% static 'yuasa/styles.css' %}">
 </head>
 <body>
-<div class="centered">
-    <h1>Gestion des stocks déportés GS YUASA BATTERY France</h1>
-    <br>
-    <br>
-    <nav>
-        <ul>
-            <li><a href="{% url 'sauron' %}">STOCK SAURON</a></li>
-            <li><a href="{% url 'picard' %}">STOCK PICARD</a></li>
-        </ul>
-    </nav>
+<!-- CONTENEUR -->
+
+<div id="main">
+    
+    <figure>
+        <img src="{% static 'yuasa/logo.jpg' %}" id="logo">
+    </figure>
+
+    <div>
+        <h1>GESTION DES STOCKS EXTERIEURS</h1>
+        <br>
+        <br>
+        <nav>
+            <ul>
+                <li><a href="{% url 'sauron' %}">STOCK SAURON</a></li>
+                <li><a href="{% url 'picard' %}">STOCK PICARD</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 </body>
 </html>
