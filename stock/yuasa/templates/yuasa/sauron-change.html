@@ -17,9 +17,9 @@
     <h1>Modifier une ou des palette(s) Yuasa au stock déporté SAURON</h1>
 
 
-    <form style="/*! /display: block ;justify-content: center;" action="" method="post">
+    <form action="" method="post">
       {% csrf_token %}
-      {{ palette.as_p }}
+      {{ form.as_p }}
       <input id="envoyer" type="submit" value="Envoyer">
     </form>
 </div>
